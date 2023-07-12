@@ -2,7 +2,9 @@ module Api
   module V1
     class ArticlesController < ApplicationController
       def index
-        render json: Article.all.order('created_at desc')
+        articles = Article.all
+        render json: ArticlesRepresenter.new(articles).as_json
+        # render json: Article.all.order('created_at desc')
       end
 
       def create
