@@ -4,7 +4,7 @@ module Api
       def index
         articles = Article.all
         render json: ArticlesRepresenter.new(articles).as_json
-        # render json: Article.all.order('created_at desc')
+        # render json: Article.all.order('created_at dsd desc')
       end
 
       def create
